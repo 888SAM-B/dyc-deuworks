@@ -3,11 +3,13 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import HomePage from './pages/HomePage.jsx';
 import ServiceDetailPage from './pages/ServiceDetailPage.jsx';
+import ProjectForm from './pages/ProjectForm.jsx';
 import LoginPage from './pages/admin/LoginPage.jsx';
 import AdminLayout from './pages/admin/AdminLayout.jsx';
 import DashboardPage from './pages/admin/DashboardPage.jsx';
 import DevelopersPage from './pages/admin/DevelopersPage.jsx';
 import ServicesPage from './pages/admin/ServicesPage.jsx';
+import ProjectRequestsPage from './pages/admin/ProjectRequestsPage.jsx';
 
 
 // Protected route wrapper
@@ -29,6 +31,7 @@ function App() {
           {/* Public site */}
           <Route path="/" element={<HomePage />} />
           <Route path="/services/:id" element={<ServiceDetailPage />} />
+          <Route path="/project-form" element={<ProjectForm />} />
 
 
           {/* Admin login */}
@@ -46,6 +49,7 @@ function App() {
             <Route path="dashboard" element={<DashboardPage />} />
             <Route path="developers" element={<DevelopersPage />} />
             <Route path="services" element={<ServicesPage />} />
+            <Route path="project-requests" element={<ProjectRequestsPage />} />
           </Route>
 
           {/* Fallback */}

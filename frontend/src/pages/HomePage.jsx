@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navbar from '../components/Navbar.jsx';
@@ -10,9 +11,21 @@ import Footer from '../components/Footer.jsx';
 import Counter from '../components/Counter.jsx';
 
 const HomePage = () => {
+  const location = useLocation();
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
   }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+  }, [location.hash]);
 
   return (
     <div className="bg-dark text-light min-h-screen overflow-x-hidden">

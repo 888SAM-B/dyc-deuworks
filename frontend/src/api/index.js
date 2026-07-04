@@ -28,3 +28,9 @@ export const deleteService = (id) => API.delete(`/services/${id}`);
 
 // Contact
 export const sendContactMessage = (data) => API.post('/contact', data);
+
+// Project Requests
+export const getProjectRequests = () => API.get('/project-requests');
+export const createProjectRequest = (data) => API.post('/project-requests', data);
+export const deleteProjectRequest = (id) => API.delete(`/project-requests/${id}`);
+export const updateProjectRequestStatus = (id, status) => API.patch(`/project-requests/${id}/status`, { status });

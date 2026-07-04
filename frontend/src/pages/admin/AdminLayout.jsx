@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
-import { Users, Settings, LayoutDashboard, LogOut } from 'lucide-react';
+import { Users, Settings, LayoutDashboard, LogOut, ClipboardList } from 'lucide-react';
 
 const navItems = [
   { to: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/admin/developers', icon: Users, label: 'Developers' },
   { to: '/admin/services', icon: Settings, label: 'Services' },
+  { to: '/admin/project-requests', icon: ClipboardList, label: 'Requests' },
 ];
 
 const AdminLayout = () => {

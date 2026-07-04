@@ -8,6 +8,7 @@ import authRoutes from './routes/auth.js';
 import developerRoutes from './routes/developers.js';
 import serviceRoutes from './routes/services.js';
 import contactRoutes from './routes/contact.js';
+import projectRequestRoutes from './routes/projectRequests.js';
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/developers', developerRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/project-requests', projectRequestRoutes);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', message: 'DYC EDUWORKS API running' }));
 
